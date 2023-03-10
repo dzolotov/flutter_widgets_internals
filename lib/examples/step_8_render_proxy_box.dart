@@ -97,8 +97,8 @@ class BlockTouchesRenderObject extends RenderProxyBox {
 
   @override
   bool hitTest(BoxHitTestResult result, {required Offset position}) {
-    if (block) {
-      return size.contains(position);
+    if (block && size.contains(position)) {
+      return false;
     }
     return super.hitTest(result, position: position);
   }

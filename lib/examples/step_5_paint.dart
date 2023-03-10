@@ -57,12 +57,14 @@ class _MolbertState extends State<Molbert> {
               points = points.toList()..last.add(details.localPosition);
             });
           },
-          child: CustomPaint(
-            painter: _MolbertPainter(
-              points,
-              Theme.of(context).colorScheme.inverseSurface,
+          child: RepaintBoundary(
+            child: CustomPaint(
+              painter: _MolbertPainter(
+                points,
+                Theme.of(context).colorScheme.inverseSurface,
+              ),
+              size: Size.infinite,
             ),
-            size: Size.infinite,
           ),
         ),
         SafeArea(

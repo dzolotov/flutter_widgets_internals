@@ -100,23 +100,23 @@ class EvenSidesWidgetsDelegate extends MultiChildLayoutDelegate {
 
   @override
   void performLayout(Size size) {
-    final leadSize = layoutChild(
-      lead,
-      BoxConstraints.loose(size).tighten(height: size.height),
-    );
-    final trailSize = layoutChild(
-      trail,
-      BoxConstraints.loose(size).tighten(height: size.height),
-    );
-
     // final leadSize = layoutChild(
     //   lead,
     //   BoxConstraints.loose(size).tighten(height: size.height),
     // );
     // final trailSize = layoutChild(
     //   trail,
-    //   BoxConstraints.tight(leadSize),
+    //   BoxConstraints.loose(size).tighten(height: size.height),
     // );
+
+    final leadSize = layoutChild(
+      lead,
+      BoxConstraints.loose(size).tighten(height: size.height),
+    );
+    final trailSize = layoutChild(
+      trail,
+      BoxConstraints.tight(leadSize),
+    );
 
     final middleSize = Size(
       size.width - leadSize.width - trailSize.width,

@@ -13,6 +13,10 @@ class _GreetingWidgetState extends State<GreetingWidget> {
   final globalKey = GlobalKey();
   bool isInno = false;
 
+  // #29548
+  // #c4bdc #c4bdc
+  // #d39b2
+  // #edfe5
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -30,28 +34,32 @@ class _GreetingWidgetState extends State<GreetingWidget> {
     );
   }
 
-  Widget get innoWidgets => Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        mainAxisSize: MainAxisSize.max,
-        children: const [
-          Icon(
-            Icons.location_city,
-            color: Colors.lightBlue,
-            size: 56,
-          ),
-          SizedBox(height: 24),
-          Text(
-            'Hello Innopolis',
-            style: TextStyle(
+  Widget get innoWidgets => Container(
+        child: Column(
+          key: globalKey,
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: const [
+            Icon(
+              Icons.location_city,
               color: Colors.lightBlue,
-              fontSize: 56,
+              size: 56,
             ),
-          ),
-        ],
+            SizedBox(height: 24),
+            Text(
+              'Hello Innopolis',
+              style: TextStyle(
+                color: Colors.lightBlue,
+                fontSize: 56,
+              ),
+            ),
+          ],
+        ),
       );
 
   Widget get flutterWidgets => Column(
+        key: globalKey,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisSize: MainAxisSize.max,
