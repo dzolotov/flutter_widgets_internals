@@ -16,7 +16,7 @@ class _SemanticsAppState extends State<SemanticsApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      showSemanticsDebugger: true,
+      showSemanticsDebugger: false,
       home: isInno ? innoWidgets : flutterWidgets,
     );
   }
